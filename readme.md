@@ -1,4 +1,4 @@
-# PROMPT 2011 - Mo'dulo 8 - Mo'dulo "Seguranca e Gestao de Identidade na Web"
+# PROMPT 2011 - Mo'dulo 9 - Mo'dulo "Programacao em dispositivos mo'veis"
 
 ## Repositorio de cmfaustino
 
