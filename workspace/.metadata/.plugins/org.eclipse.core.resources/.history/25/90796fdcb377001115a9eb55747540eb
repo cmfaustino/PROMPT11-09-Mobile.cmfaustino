@@ -1,0 +1,71 @@
+package prompt.yamba;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.content.res.Resources;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+
+public class BaseActivity extends Activity {
+
+	private TsncApplication getYa(){
+		return (TsncApplication) getApplication();
+	}
+	
+	@Override
+	public void onCreate(Bundle savedInstanceState) { // substituir protected
+		super.onCreate(savedInstanceState);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		//return super.onCreateOptionsMenu(menu);
+		super.onCreateOptionsMenu(menu);
+		getMenuInflater().inflate(R.menu.menu, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		//return super.onOptionsItemSelected(item);
+		super.onOptionsItemSelected(item);
+		switch (item.getItemId()) {
+		case R.id.item_prefs:
+			startActivity(new Intent(this,UserPreferencesActivity.class)); //this.
+			break;
+
+		case R.id.item_update:
+			startActivity(new Intent(this,UpdateStatusActivity.class)); //this.
+			break;
+
+		case R.id.item_timeline:
+			startActivity(new Intent(this,TimelineActivity.class)); //this.
+			break;
+
+		case R.id.item_pull:
+			startService(new Intent(this,TimelinePullService.class)); //this.
+			break;
+
+		default:
+			// nao faz nada
+			break;
+		}
+		return true;
+	}
+
+	@Override
+	public boolean onMenuOpened(int featureId, Menu menu) {
+		//return super.onMenuOpened(featureId, menu);
+		super.onMenuOpened(featureId, menu);
+		//Resources res = getResources();
+		//boolean auto_pull_on = res.getBoolean(R.bool.automatic_pull_is_active);
+		TsncApplication app = getYa();
+		boolean auto_pull_on = app.getPrefs()
+				.getBoolean("automatic_pull_is_active_cbx",
+						app.res.getBoolean(R.bool.automatic_pull_is_active, false));
+		menu.findItem(R.id.item_pull).setEnabled(!auto_pull_on); // oposto de auto
+		return true;
+	}
+
+}

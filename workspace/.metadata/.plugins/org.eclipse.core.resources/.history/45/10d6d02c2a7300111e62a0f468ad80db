@@ -1,0 +1,28 @@
+package com.example.helloandroid;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.TextView; // add import package press Ctrl-Shift-O ; then ...
+
+public class HelloAndroid extends Activity { // ... Run > Run : Android Application
+    /** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //setContentView(R.layout.main);
+        TextView tv = new TextView(this);
+        tv.setText("Hello, Android");
+        setContentView(tv);
+        // http://developer.android.com/resources/tutorials/hello-world.html
+        // http://developer.android.com/reference/android/app/Activity.html onCreate
+        // http://developer.android.com/reference/android/view/View.html
+        // = drawable object used as an element in your UI layout
+        // http://developer.android.com/reference/android/widget/TextView.html
+        // = subclass that handles text
+        // http://developer.android.com/reference/android/content/Context.html
+        // = system services: resolve resources, obtain access to db's,pref's, so on
+        // = Activity class inherits from Context, you can pass this as Context
+        // pass TextView to setContentView() display it as content for Activity UI.
+        // If Activity doesn't call method, no UI is present and system display blank
+    } // "Hello, Android" in the grey bar (or top bar) = app_name - ...
+} // ... - res/values/strings.xml ; AndroidManifest.xml

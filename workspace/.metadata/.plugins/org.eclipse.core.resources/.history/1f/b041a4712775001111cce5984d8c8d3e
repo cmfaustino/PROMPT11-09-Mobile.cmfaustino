@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <EditTextPreference
+        android:key="username"
+        android:title="@string/prefs_username_title"
+        android:summary="@string/prefs_username_summary" android:defaultValue="@string/yamba_user"/>
+    
+    <EditTextPreference
+        android:key="password"
+        android:title="@string/prefs_password_title"
+        android:summary="@string/prefs_password_summary"
+        android:password="true" android:defaultValue="@string/yamba_password"/>
+    
+    <EditTextPreference
+        android:key="yamba_url"
+        android:title="@string/prefs_yamba_url_title"
+        android:summary="@string/prefs_yamba_url_summary" android:defaultValue="@string/yamba_api_url"/>
+
+    <CheckBoxPreference android:key="automatic_pull_active"
+        android:title="@string/prefs_automatic_pull_active_title"
+        android:summary="@string/prefs_automatic_pull_active_summary"
+        android:defaultValue="false"/>
+
+    <EditTextPreference
+        android:key="automatic_pull_time"
+        android:title="@string/prefs_automatic_pull_time_title"
+        android:summary="@string/prefs_automatic_pull_time_summary"
+        android:defaultValue="60000"/>
+    
+
+</PreferenceScreen>

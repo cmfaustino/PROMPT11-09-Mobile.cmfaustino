@@ -1,0 +1,22 @@
+package prompt.yamba;
+
+import winterwell.jtwitter.Twitter;
+import android.app.Application;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.content.res.Resources;
+
+public class TsncApplication extends Application implements OnSharedPreferenceChangeListener {
+
+	public volatile String TAG; // static final
+	private volatile Twitter _twitter;
+	private volatile SharedPreferences _prefs; // volatile: Activ sbmtTweet AsncTsk 
+	public Resources res;
+
+	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
+			String key) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

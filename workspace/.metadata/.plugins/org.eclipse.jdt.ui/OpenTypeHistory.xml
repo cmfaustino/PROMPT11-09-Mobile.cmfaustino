@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=YambaRefactorAndroid/src&lt;prompt.yamba{BaseActivity.java[BaseActivity" modifiers="1" timestamp="1332822567476"/>
+<typeInfo handle="=YambaRefactorAndroid/C:\/Program Files \(x86)\/Android\/android-sdk\/platforms\/android-10\/android.jar&lt;android.app(Activity.class[Activity" modifiers="33" timestamp="1331056064323"/>
+<typeInfo handle="=YambaRefactorAndroid/C:\/Program Files \(x86)\/Android\/android-sdk\/platforms\/android-10\/android.jar&lt;android.preference(PreferenceActivity.class[PreferenceActivity" modifiers="1057" timestamp="1331056064323"/>
+<typeInfo handle="=YambaRefactorAndroid/C:\/Program Files \(x86)\/Android\/android-sdk\/platforms\/android-10\/android.jar&lt;android.app(Application.class[Application" modifiers="33" timestamp="1331056064323"/>
+<typeInfo handle="=YambaRefactorAndroid/C:\/Program Files \(x86)\/Android\/android-sdk\/platforms\/android-10\/android.jar&lt;android.app(IntentService.class[IntentService" modifiers="1057" timestamp="1331056064323"/>
+<typeInfo handle="=YambaRefactorAndroid/C:\/Program Files \(x86)\/Android\/android-sdk\/platforms\/android-10\/android.jar&lt;android.app(Service.class[Service" modifiers="1057" timestamp="1331056064323"/>
+</typeInfoHistroy>

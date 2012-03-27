@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_item_pref_name">User_Preferences</string>
+    <string name="app_item_timeline_name">Timeline_Activity</string>
+    <string name="app_item_update_name">Update_Status_Activity</string>
+    <string name="app_item_pull_name">Timeline_Pull_Service</string>
+
+</resources>

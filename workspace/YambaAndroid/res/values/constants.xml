@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">YambaAndroid</string>
+    <string name="app_tag">TSN</string>
+    <string name="yamba_api_url">http://yamba.marakana.com/api</string><!-- _ -->
+    <string name="yamba_user">cmfaustino</string><!-- _ -->
+    <string name="yamba_password">cmf/4YAMBA.com</string><!-- _ -->
+    
+</resources>

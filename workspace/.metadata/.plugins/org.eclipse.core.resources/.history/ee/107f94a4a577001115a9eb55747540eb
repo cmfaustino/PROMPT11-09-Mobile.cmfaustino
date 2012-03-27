@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayoutUpdateStatus"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" ><!-- match_parent para fill_parent -->
+    <TextView
+        android:id="@+id/TextViewUpdateHello"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hello" />
+
+    <TextView
+        android:id="@+id/TextViewUpdateTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/update_status_title" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutUpdateEdit"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_weight="1" >
+        <TextView
+            android:id="@+id/TextViewUpdateTamanhoDisponivel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="@string/status_tamanho_disponivel_label" />
+
+        <EditText
+            android:id="@+id/editTextUpdateStatus"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_horizontal|top"
+            android:hint="@string/status_hint_placeholder"
+            android:inputType="textMultiLine"
+            android:maxLength="140" />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/buttonSubmit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/update_submit_button_label" />
+
+</LinearLayout>

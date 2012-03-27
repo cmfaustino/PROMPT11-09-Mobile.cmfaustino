@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="yamba_api_url">http://yamba.marakana.com/api</string>
+    <string name="yamba_user">cmfaustino</string>
+    <string name="yamba_password">cmf/4YAMBA.com</string>
+    
+</resources>

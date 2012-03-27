@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, YambaAndroidActivity!</string>
+    <string name="yamba_title">Yamba</string>
+    <color name="cor_tamanho_maximo">#FF00FF00</color><!-- GREEN -->
+    <color name="cor_tamanho_intermedio">#FFFFFF00</color><!-- YELLOW -->
+    <color name="cor_tamanho_nulo">#FFFF0000</color><!-- RED -->
+    <color name="cor_tamanho_invalido">#FFFF00FF</color><!-- MAGENTA -->
+    <string name="hint_placeholder">Introduza a sua mensagem, com 140 caracteres no máximo&#8230;</string>
+    <string name="submit_botao">Submeter</string>
+    <string name="tamanho_botao">botao</string>
+    <string name="prefs_title">Preferencias</string>
+    <string name="prefs_username_title">Username</string>
+    <string name="prefs_password_title">Password</string>
+    <string name="prefs_url_title">URL</string>
+    <string name="prefs_username_summary">The user\'s name</string>
+    <string name="prefs_password_summary">The user\'s password</string>
+    <string name="prefs_url_summary">The Yamba service URL</string>
+    <string name="upload_intent_extra_text">TweetText</string>
+    
+</resources>

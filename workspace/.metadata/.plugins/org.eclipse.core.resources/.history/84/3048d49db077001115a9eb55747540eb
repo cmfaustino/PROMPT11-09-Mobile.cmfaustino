@@ -1,0 +1,8 @@
+package prompt.yamba;
+
+import android.app.Application;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+
+public class TsncApplication extends Application implements OnSharedPreferenceChangeListener {
+
+}

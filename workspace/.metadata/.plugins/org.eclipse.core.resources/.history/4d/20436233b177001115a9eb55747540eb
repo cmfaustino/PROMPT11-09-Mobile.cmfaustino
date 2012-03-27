@@ -1,0 +1,46 @@
+package prompt.yamba;
+
+import winterwell.jtwitter.Twitter;
+import android.app.Application;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.content.res.Resources;
+
+public class TsncApplication extends Application implements OnSharedPreferenceChangeListener {
+
+	public volatile String TAG; // static final
+	private volatile Twitter _twitter;
+	private volatile SharedPreferences _prefs; // volatile: Activ sbmtTweet AsncTsk 
+	public Resources res;
+
+	private void init(){
+		res = getResources();
+		TAG = res.getString(R.string.app_tag);
+		_twitter = null;
+	}
+	
+	public String getAppTag() {
+		return res.getString(R.string.app_tag, "");
+	}
+
+	public synchronized Twitter getTwitter(){
+		if (_twitter == null)
+		{
+			_twitter = new Twitter(res.getString(R.string.yamba_user, ""),
+									res.getString(R.string.yamba_password, ""));
+			_twitter.setAPIRootUrl(res.getString(R.string.yamba_api_url, ""));
+		}
+		return _twitter;
+	}
+	
+	public SharedPreferences getPrefs(){ // metodo p/: Activ submitTweet AsyncTask
+		return _prefs;
+	}
+
+	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
+			String key) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

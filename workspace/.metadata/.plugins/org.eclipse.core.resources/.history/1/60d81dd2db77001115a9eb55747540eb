@@ -1,0 +1,170 @@
+package prompt.yamba;
+
+import winterwell.jtwitter.Twitter;
+import winterwell.jtwitter.TwitterException;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class UpdateStatusActivity extends BaseActivity {
+
+	protected int intTamanhoLivre = getApp().res
+			.getInteger(R.integer.status_tamanho_maximo);
+	
+	protected void setCorTextoParaTamanhoLivre(){
+    	final TextView textViewTamanhoLivre =
+    			(TextView) findViewById(R.id.TextViewUpdateEditSizeAvail);
+    	final Resources res = getApp().res;
+    	final int intTamanhoMax = res.getInteger(R.integer.status_tamanho_maximo);
+
+    	int cor_nova;
+		if (intTamanhoLivre == intTamanhoMax)
+			cor_nova = res.getColor(R.color.status_cor_tamanho_maximo);
+		else if ((intTamanhoLivre > 0) && (intTamanhoLivre < intTamanhoMax))
+			cor_nova = res.getColor(R.color.status_cor_tamanho_intermedio);
+		else if (intTamanhoLivre == 0)
+			cor_nova = res.getColor(R.color.status_cor_tamanho_nulo);
+		else cor_nova = res.getColor(R.color.status_cor_tamanho_invalido);
+
+		textViewTamanhoLivre.setText(Integer.toString(intTamanhoLivre));
+		textViewTamanhoLivre.setTextColor(cor_nova);
+	}
+	
+	private void submitTweet(String msgtxt){
+		
+		AsyncTask<String, Void, Void> tarefa =
+				(new AsyncTask<String, Void, Void>(){
+
+			@Override
+			protected void onPreExecute() {
+				super.onPreExecute();
+			}
+			
+			@Override
+			protected Void doInBackground(String... params) {
+				//The three dots indicate that this is an array of Strings
+				Twitter _twitter = getApp().getTwitter();
+				SharedPreferences prefs = getApp().getPrefs();
+				Resources res = getApp().res;
+				
+				if (_twitter == null)
+				{
+					// _prefs nao estava na TsncApplication, nem era volatile,
+					//  mas estava nesta Activity, e tudo relacionado tambem
+					_twitter = new Twitter(
+							prefs.getString("username",
+									res.getString(R.string.yamba_user, "")),
+							prefs.getString("password",
+									res.getString(R.string.yamba_password, ""))
+							);
+					_twitter.setAPIRootUrl(
+							prefs.getString("yamba_url",
+									res.getString(R.string.yamba_api_url, ""))
+							);
+				}
+				
+				//try..catch no livro Learning Android - pagina impressa 68 Chapter6
+				try {
+					_twitter.updateStatus(params[0]);
+				} catch (TwitterException e) {
+					Log.e(getApp().getAppTag(), e.toString());
+					e.printStackTrace();
+				}
+				
+				return null;
+			}
+
+			@Override
+			protected void onPostExecute(Void result) {
+				//adaptado do livro Learning Android - pagina impressa 68 Chapter6
+				//super.onPostExecute(result);
+				
+				Toast.makeText(UpdateStatusActivity.this,
+						"UpdateStatusActivity - "
+								+ "Fim da Operacao de Envio de Post/Twitter.",
+						Toast.LENGTH_SHORT).show();
+			}
+
+		});
+		//tarefa.execute(msgtxt);
+		boolean tc = tarefa.isCancelled(); // linha p/ suprimir warnings no Eclipse
+
+		//Intent msg = new Intent(this,UpdateStatusService.class);
+		Intent msg = new Intent(this,UpdateStatusIntentService.class);
+		msg.putExtra(
+				getApp().res.getString(R.string.upload_intent_extra_text),
+				msgtxt
+				);
+		startService(msg);
+	}
+	
+	private void init(){
+        setCorTextoParaTamanhoLivre();
+        
+		Log.i(getApp().getAppTag(),
+				"UpdateStatusActivity.onCreate(Bundle) - init() : thread id = "
+						+ Thread.currentThread().getId());
+		
+        EditText editTextStatusMsg =
+        		(EditText) findViewById(R.id.editTextUpdateEditStatusMsg);
+        editTextStatusMsg.addTextChangedListener(new TextWatcher() {
+			
+			public void onTextChanged(CharSequence s,
+					int start, int before, int count) {
+				intTamanhoLivre = intTamanhoLivre - (count - before);
+		        //setCorTextoParaTamanhoLivre();
+		        
+				Log.i(getApp().getAppTag(),
+						"UpdateStatusActivity - "
+								+ "EditText.onTextChanged(CharSequence,int,int,int)"
+								+ " : thread id = "
+								+ Thread.currentThread().getId());
+			}
+			
+			public void beforeTextChanged(CharSequence s, int start, int count,
+					int after) {
+				// TODO Auto-generated method stub
+				// nao deve ser necessario fazer nada, pois ha limite de tamanho
+			}
+			
+			public void afterTextChanged(Editable s) {
+				// TODO Auto-generated method stub
+				// nao deve ser necessario fazer nada, pois ha limite de tamanho
+		        setCorTextoParaTamanhoLivre();
+			}
+		});
+        
+        Button buttonSubmit =
+        		(Button) findViewById(R.id.buttonUpdateSubmitStatusMsg);
+        buttonSubmit.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) {
+				Log.i(getApp().getAppTag(), "Button.onClick(View) : thread id = "
+						+ Thread.currentThread().getId());
+				
+				EditText editTextStatusMsg =
+						(EditText) findViewById(R.id.editTextUpdateEditStatusMsg);
+				Editable msgText = editTextStatusMsg.getText(); 
+				submitTweet(msgText.toString());
+			}
+		});
+	}
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) { // substituir public
+		super.onCreate(savedInstanceState);
+        setContentView(R.layout.update_status_layout);
+		init();
+	}
+
+}

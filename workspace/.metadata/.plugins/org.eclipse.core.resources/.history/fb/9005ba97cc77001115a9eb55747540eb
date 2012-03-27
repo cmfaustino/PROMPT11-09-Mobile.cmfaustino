@@ -1,0 +1,29 @@
+package prompt.yamba;
+
+import android.app.IntentService;
+import android.content.Intent;
+
+public class UpdateStatusIntentService extends IntentService {
+
+	private TsncApplication _application;
+	
+	protected TsncApplication getApp(){ // substituir private, p/ visivel subclasses
+		return (TsncApplication) getApplication();
+	}
+	
+	public UpdateStatusIntentService(String name) {
+		super(name);
+	}
+
+	@Override
+	public void onCreate() {
+		super.onCreate();
+	}
+
+	@Override
+	protected void onHandleIntent(Intent intent) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

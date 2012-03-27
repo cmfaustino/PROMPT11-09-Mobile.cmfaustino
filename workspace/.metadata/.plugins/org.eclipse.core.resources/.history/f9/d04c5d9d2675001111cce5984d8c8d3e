@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item format="boolean" name="automatic_pull_active" type="bool">false</item>
+    <item format="integer" name="automatic_pull_time" type="integer">60000</item><!-- a minute -->
+    
+</resources>

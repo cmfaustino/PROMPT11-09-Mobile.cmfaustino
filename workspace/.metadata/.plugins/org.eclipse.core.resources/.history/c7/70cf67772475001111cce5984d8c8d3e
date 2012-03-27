@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="update_title">Yamba Update</string>
+    <color name="status_cor_tamanho_maximo">#FF00FF00</color>
+    <color name="status_cor_tamanho_intermedio">#FFFFFF00</color>
+    <color name="status_cor_tamanho_nulo">#FFFF0000</color>
+    <color name="status_cor_tamanho_invalido">#FFFF00FF</color><string name="status_tamanho_disponivel_label">tamanho</string>
+    <string name="status_hint_placeholder">Introduza a sua mensagem, com 140 caracteres no máximo…</string>
+    <string name="update_submit_button_label">Submeter</string>
+    
+    
+</resources>

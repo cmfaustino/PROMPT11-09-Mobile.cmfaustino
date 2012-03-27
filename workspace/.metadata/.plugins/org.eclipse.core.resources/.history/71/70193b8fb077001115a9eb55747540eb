@@ -1,0 +1,7 @@
+package prompt.yamba;
+
+import android.app.Application;
+
+public class TsncApplication extends Application {
+
+}

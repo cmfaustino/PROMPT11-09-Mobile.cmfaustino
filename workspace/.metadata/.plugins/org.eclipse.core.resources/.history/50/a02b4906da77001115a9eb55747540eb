@@ -1,0 +1,57 @@
+package prompt.yamba;
+
+import winterwell.jtwitter.TwitterException;
+import android.app.IntentService;
+import android.content.Intent;
+import android.util.Log;
+import android.widget.Toast;
+
+public class UpdateStatusIntentService extends IntentService {
+
+	private TsncApplication _application;
+	
+	protected TsncApplication getApp(){ // substituir private, p/ visivel subclasses
+		return (TsncApplication) getApplication();
+	}
+	
+	public UpdateStatusIntentService(String name) {
+		super(name);
+	}
+
+	@Override
+	public void onCreate() {
+		super.onCreate();
+		_application = getApp();
+	}
+
+	@Override
+	protected void onHandleIntent(Intent intent) {
+		//_application = getApp();
+		final String TAG = _application.getAppTag();
+		
+		Log.i(TAG, "UpdateStatusIntentService.onHandleIntent(Intent)"
+				+ " : thread id = " + Thread.currentThread().getId());
+		
+		final String message = intent.getStringExtra(
+				_application.res.getString(R.string.upload_intent_extra_text)
+				);
+		
+		Log.i(TAG, "UpdateStatusIntentService.onHandleIntent(Intent)"
+				+ " : intent payload = " + message);
+		
+		//try..catch adaptado do livro Learning Android -
+		//- paginas impressas 68 Chapter6 e 105 Chapter8 (2a versao reenvia excepc)
+		try {
+			_application.getTwitter().updateStatus(message);
+		} catch (TwitterException e) {
+			Log.e(getApp().getAppTag(), e.toString()); // nao se quer reenviar excep
+			e.printStackTrace();
+		}
+		//adaptado do livro Learning Android - pagina impressa 68 Chapter6
+		Toast.makeText(UpdateStatusIntentService.this,
+				"UpdateStatusIntentService - "
+						+ "Fim da Operacao de Envio de Post/Twitter.",
+				Toast.LENGTH_SHORT);
+	}
+
+}
