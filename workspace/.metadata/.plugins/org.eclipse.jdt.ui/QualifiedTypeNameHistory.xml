@@ -15,7 +15,6 @@
 <fullyQualifiedTypeName name="android.os.Looper"/>
 <fullyQualifiedTypeName name="android.app.Application"/>
 <fullyQualifiedTypeName name="prompt.yamba.R.string"/>
-<fullyQualifiedTypeName name="winterwell.jtwitter.Twitter.Status"/>
 <fullyQualifiedTypeName name="prompt.yamba.R.menu"/>
 <fullyQualifiedTypeName name="prompt.yamba.R.id"/>
 <fullyQualifiedTypeName name="prompt.yamba.R.bool"/>
@@ -25,14 +24,25 @@
 <fullyQualifiedTypeName name="prompt.yamba.R.color"/>
 <fullyQualifiedTypeName name="android.text.TextWatcher"/>
 <fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="prompt.yamba.UpdateStatusActivity"/>
 <fullyQualifiedTypeName name="android.util.Log"/>
 <fullyQualifiedTypeName name="android.os.Handler"/>
 <fullyQualifiedTypeName name="java.lang.Runnable"/>
 <fullyQualifiedTypeName name="android.os.AsyncTask"/>
-<fullyQualifiedTypeName name="winterwell.jtwitter.Twitter"/>
 <fullyQualifiedTypeName name="android.content.SharedPreferences"/>
 <fullyQualifiedTypeName name="winterwell.jtwitter.TwitterException"/>
 <fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="prompt.yamba.TimelineProviderContract"/>
+<fullyQualifiedTypeName name="android.net.Uri"/>
+<fullyQualifiedTypeName name="android.content.UriMatcher"/>
+<fullyQualifiedTypeName name="java.util.Dictionary"/>
+<fullyQualifiedTypeName name="java.util.concurrent.ConcurrentMap"/>
+<fullyQualifiedTypeName name="prompt.yamba.TimelineStoreBasica"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.util.concurrent.ConcurrentHashMap"/>
+<fullyQualifiedTypeName name="winterwell.jtwitter.Twitter"/>
+<fullyQualifiedTypeName name="winterwell.jtwitter.Twitter.Status"/>
+<fullyQualifiedTypeName name="android.database.MatrixCursor"/>
+<fullyQualifiedTypeName name="prompt.yamba.TimelineProvider"/>
 </qualifiedTypeNameHistroy>

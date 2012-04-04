@@ -36,6 +36,15 @@
         <service android:name=".UpdateStatusIntentService"></service>
 
         <service android:name=".TimelinePullService"></service>
+        
+        <receiver android:name=".NetworkStatusBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        
+        <provider android:name=".TimelineProvider" android:multiprocess="false"
+            android:authorities="tsnc.timeline" />
 
     </application>
 

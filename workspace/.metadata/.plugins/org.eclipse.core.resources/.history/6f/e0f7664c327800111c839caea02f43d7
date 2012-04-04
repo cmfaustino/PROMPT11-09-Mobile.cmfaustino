@@ -1,0 +1,12 @@
+package prompt.yamba;
+
+import android.net.Uri;
+
+public final class TimelineStoreContract {
+	public static final String AUTHORITY = "tsnc.timeline";
+	public static final Uri CONTENT_URI = Uri.parse("content://tsnc.timeline");
+	
+	public static final String PLAYER_ID = "_ID";
+	public static final STring PLAYER_NAME = "Name";
+
+}

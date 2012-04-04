@@ -29,7 +29,13 @@
         <service android:name=".YambaUpdateService"></service>
 
         <service android:name=".YambaIntentService"></service>
-
+        
+        <receiver android:name=".ConnectivityBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        
         </application>
 
 </manifest>

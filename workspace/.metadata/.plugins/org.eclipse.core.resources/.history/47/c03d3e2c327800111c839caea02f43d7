@@ -1,0 +1,6 @@
+package prompt.yamba;
+
+public final class TimelineStoreContract {
+	public static final String AUTHORITY = "";
+
+}

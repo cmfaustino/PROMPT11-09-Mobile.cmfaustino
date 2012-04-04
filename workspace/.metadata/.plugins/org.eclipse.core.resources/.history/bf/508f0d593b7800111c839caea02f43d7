@@ -1,0 +1,10 @@
+package prompt.yamba;
+
+import java.util.concurrent.ConcurrentMap;
+
+import winterwell.jtwitter.Twitter;
+
+public final class TimelineStoreBasica {
+	private ConcurrentMap<Integer, Twitter.Status> _store;
+
+}

@@ -1,0 +1,10 @@
+package prompt.yamba;
+
+import java.util.Dictionary;
+
+import winterwell.jtwitter.Twitter;
+
+public final class TimelineStoreBasica {
+	private ConcurrentDictionary<Integer, Twitter.Status> store;
+
+}

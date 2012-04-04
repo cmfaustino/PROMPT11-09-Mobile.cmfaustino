@@ -1,0 +1,24 @@
+package prompt.yamba;
+
+import android.net.Uri;
+
+public final class TimelineStoreContract {
+	public static final String AUTHORITY = "tsnc.timeline";
+	public static final Uri CONTENT_URI = Uri.parse("content://tsnc.timeline");
+	
+/*	public static final String PLAYER_ID = "_ID";
+	public static final String PLAYER_NAME = "Name";
+	public static final String PLAYER_DEVICE_ADDR = "DeviceAddress";
+	public static final String PLAYER_RATING = "Rating";
+
+	public static final String PLAYER_ITEM_TYPE = "vnd.android.cursor.item/status";
+	public static final String PLAYER_LIST_TYPE = "vnd.android.cursor.dir/status";
+*/	
+	public static final String TWEET_ID = "_ID";
+	
+	public static final String USER_NAME = "User_Name";
+	
+	public static final String TWEET_TEXT = "Text";
+	
+	private
+}

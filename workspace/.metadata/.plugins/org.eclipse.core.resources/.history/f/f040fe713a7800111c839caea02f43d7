@@ -1,0 +1,8 @@
+package prompt.yamba;
+
+import java.util.Dictionary;
+
+public final class TimelineStoreBasica {
+	Dictionary<integer, Twitter.Status> store;
+
+}

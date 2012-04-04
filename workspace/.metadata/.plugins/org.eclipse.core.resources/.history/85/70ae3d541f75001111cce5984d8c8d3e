@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="prefs_username_title"/>
-    <string name="prefs_username_summary"/>
-    <string name="prefs_password_title"/>
-    <string name="prefs_password_summary"/>
-    
-</resources>

@@ -1,0 +1,9 @@
+package prompt.yamba;
+
+import android.net.Uri;
+
+public final class TimelineStoreContract {
+	public static final String AUTHORITY = "tsnc.timeline";
+	public static final Uri CONTENT_URI = Uri.parse("content://tsnc.timeline");
+
+}
