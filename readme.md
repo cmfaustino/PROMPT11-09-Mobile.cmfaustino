@@ -8,13 +8,13 @@
 
 * 3 atalhos para filesystem local, para a localizacao de itens Android, como, por exemplo, a documentacao/referencia/guias, e os icons, seja na versao 2.3.3 (API level 10) ou na 4.0.3 (API level 15), embora a primeira seja a utilizada no modulo.
 
-###Em [workspace](/workspace/)
+###Em [workspace](./workspace/)
 
-* [workspace/HelloAndroid](/workspace/HelloAndroid/) = Projecto simples de introducao, realizado no modulo (completo);
-* [workspace/YambaAndroid](/workspace/YambaAndroid/) = Projecto realizado no modulo (bastante incompleto, sem componentes de network nem de timeline, dadas na aula/sessao de 20-03-2012);
-* [workspace/YambaRefactorAndroid](/workspace/YambaRefactorAndroid/) = Projecto realizado no modulo, com refactoring global realizado no modulo (bastante incompleto, sem componentes de network nem de timeline, dadas na aula/sessao de 20-03-2012... ainda!);
+* [workspace/HelloAndroid](./workspace/HelloAndroid/) = Projecto simples de introducao, realizado no modulo (completo);
+* [workspace/YambaAndroid](./workspace/YambaAndroid/) = Projecto realizado no modulo (bastante incompleto, sem componentes de network nem de timeline, dadas na aula/sessao de 20-03-2012);
+* [workspace/YambaRefactorAndroid](./workspace/YambaRefactorAndroid/) = Projecto realizado no modulo, com refactoring global realizado no modulo (bastante incompleto, sem componentes de network nem de timeline, dadas na aula/sessao de 20-03-2012... ainda!);
 
-* [workspace/HelloAndroidTutorial](/workspace/HelloAndroidTutorial/) = Projecto simples de introducao, de acordo com [o tutorial Hello World que esta' no site oficial Android](http://developer.android.com/resources/tutorials/hello-world.html) (completo);
+* [workspace/HelloAndroidTutorial](./workspace/HelloAndroidTutorial/) = Projecto simples de introducao, de acordo com [o tutorial Hello World que esta' no site oficial Android](http://developer.android.com/resources/tutorials/hello-world.html) (completo);
 
 * workspace/ ... = Projecto que segue a implementacao exactamente igual das varias fases descritas no [livro Learning Android](http://ofps.oreilly.com/titles/9781449390501/) - codigo e respectiva estruturacao iguais ou parecidos ao que esta' no [repositorio GitHub do livro](https://github.com/marakana/LearningAndroidYamba) e no [site oficial da editora do livro](http://examples.oreilly.com/0636920010883/) - existe [errata online do livro](http://oreilly.com/catalog/errata.csp?isbn=0636920010883) (por fazer... ainda!).
 
